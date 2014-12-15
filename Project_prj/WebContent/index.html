@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>영화 보기 좋은날</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/common/favicon/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<link rel="stylesheet" type="text/css" href="css/main.css"/>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+function popup(){
+	window.open("login.html","pop","width=400, height=310, scrollbars=no, top=200, left=500");
+}//popup
+</script>
+</head>
+<body>
+	<header>
+		<div id="top_wrap">
+		<div id="top_nav">
+			<nav>
+				<ul id="nav_list">
+					<li><a href="javascript:popup()">로그인</a></li>
+					<li><a href="join.html">회원가입</a></li>
+					<li><a href="">사이트맵</a></li>
+					<li><a href="">즐겨찾기</a></li>
+				<!-- 하단 JSP 추가해서 로그인 됐을때와 안됐을때 코드 추가하고 
+				      상단에 li 삭제// JSP day1117 session 참조 -->
+				<!-- 
+				<% if(loginFlag){ %>
+					<li><a href="">로그아웃</a></li>
+					<li><a href="">Mypage</a></li>
+					<li><a href="">사이트맵</a></li>
+					<li><a href="">즐겨찾기</a></li>
+				<%}else{ %>
+					<li><a href="javascript:popup()">로그인</a></li>
+					<li><a href="join.html">회원가입</a></li>
+					<li><a href="">사이트맵</a></li>
+					<li><a href="">즐겨찾기</a></li>
+				<%}//end else %>	
+				 -->
+				</ul>
+			</nav>
+		</div>
+		<div id="top_menu">
+			<div id="logo">
+				<a href="index.html"><img src="images/common/header/logo.png"/></a>
+			</div>
+			<div id="gnv">
+				<ul>
+					<li id="gnv_newmovie"><a href="sub_movieinfo.html" title="최신 영화 정보">최신 영화 정보</a></li>
+					<li id="gnv_movieinfo"><a href="#" title="영화관 정보">영화관 정보</a></li>
+					<li id="gnv_community"><a href="#" title="영화 커뮤니티">영화 커뮤니티</a></li>
+					<li id="gnv_shop"><a href="#" title="SHOP">SHOP</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</header>
+	<!-- contents -->
+	<section id="contents">
+		<!-- 메인 최신 영화 -->
+		<article id="show_newmovie">
+				<ul>
+					<li>
+						<div class="newmovie_wrap">
+							<div class="newmovie_imgbox">
+								<img src="images/index/newmovie/movie_img001.jpg"/>
+							</div>
+							<div class="newmovie_infobox">
+								<div class="movie_info">
+									<dl>
+										<dt class="movie_title">우리는 형제 입니다</dt><dd class="movie_genre">코미디/가족</dd>
+									</dl>
+								</div>
+								<div class="detail_btn">
+									<a href="#">상세보기<img src="images/index/newmovie/detail_btn.png"></a>
+								</div>
+							</div>
+							<div class="movie_grade">
+								<div>
+									<span class="grade_title">평점</span><span class="m_starOff"><span class="m_starOn" style="width: 80%"></span></span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="newmovie_wrap">
+							<div class="newmovie_imgbox">
+								<img src="images/index/newmovie/movie_img002.jpg"/>
+							</div>
+							<div class="newmovie_infobox">
+								<div class="movie_info">
+									<dl>
+										<dt class="movie_title">레드카펫</dt><dd class="movie_genre">로멘스/멜로, 코미디</dd>
+									</dl>
+								</div>
+								<div class="detail_btn">
+									<a href="#">상세보기<img src="images/index/newmovie/detail_btn.png"></a>
+								</div>
+							</div>
+							<div class="movie_grade">
+								<div>
+									<span class="grade_title">평점</span><span class="m_starOff"><span class="m_starOn" style="width: 50%"></span></span>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="newmovie_wrap">
+							<div class="newmovie_imgbox">
+								<img src="images/index/newmovie/movie_img003.jpg"/>
+							</div>
+							<div class="newmovie_infobox">
+								<div class="movie_info">
+									<dl>
+										<dt class="movie_title">나의 사랑 나의 신부</dt><dd class="movie_genre">로멘스/멜로, 코미디</dd>
+									</dl>
+								</div>
+								<div class="detail_btn">
+									<a href="#">상세보기<img src="images/index/newmovie/detail_btn.png"></a>
+								</div>
+							</div>
+							<div class="movie_grade">
+								<div>
+									<span class="grade_title">평점</span><span class="m_starOff"><span class="m_starOn" style="width: 65%"></span></span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+		</article>
+		<!-- BEST 평론가 -->
+		<article id="show_cri">
+			<div id="show_cri_con">
+				<div class="contents_title">
+					<img src="images/index/bestcri/bestcri_title.png" usemap="#bestcri" alt="best평론가"/>
+					<map name="bestcri" ><area shape="rect" coords="207,20,255,42" href="#" alt="more"/></map>
+				</div>
+				<ul class="cri_list">
+					<li class="cri_con">
+						<div class="cri_img">
+							<img src="images/index/newmovie/movie_img002.jpg"/>
+						</div>
+						<div class="cri_text">
+						<dl>
+							<dt class="cri_title"><a href="">완전 기대이상. 편견을 극복한 감동...</a></dt>
+							<dd class="cri_createInfo"><span>오화연</span><span class="text_slide"> | </span><span>2014.11.12</span><span class="text_slide"> | </span><span>추천</span><span class="recScore">2264</span></dd>
+							<dd class="cri_maintext"><a href="#">
+							‘19금영화판’. 즉 에로 영화판을 소재로한
+							정말 한없이 가볍고 싼맛나는 그런 저렴한
+							영화 인줄 알았는데, 왠걸. 이렇게나 나름
+							진지하고 뭉클한 감동까지 선사해줄줄은
+							전혀 몰랐네요. 그래서 너무나 기쁜 마음
+							으로 기대이상, 의외의 재미를 가져다준
+							착하고 좋은 영화였습니다. 뭔가 한없이
+							가벼워 보이는 포스터와 예고편만 보아도...</a>
+						</dl>
+						</div>
+					</li>
+					<li class="cri_con">
+						<div class="cri_img">
+							<img src="images/index/newmovie/movie_img003.jpg"/>
+						</div>
+						<div class="cri_text">
+						<dl>
+							<dt class="cri_title"><a href="">다시 살 수 없는 인생, 재촬영할 수...</a></dt>
+							<dd class="cri_createInfo"><span>곽효창</span><span class="text_slide"> | </span><span>2014.11.11</span><span class="text_slide"> | </span><span>추천</span><span class="recScore">2091</span></dd>
+							<dd class="cri_maintext"><a href="#">
+							가끔 미술관이나 전시회가 있어 가게 되
+							면 도슨트의 작품설명 시간을 맞추어서
+							들으려고 노력하는 편이다. ‘아는 만큼 보
+							인다’고 내 나름의 전문지식이 없거나 많
+							이 부족한 분야는 전문가의 도움을 받으면
+							보이지 않던 것들이 보이게 되어 때론 숨
+							겨져 있던 보석같은 부분을 발견하게 되기
+							도 한다. ‘영화를 매우 좋아하는 일반인’...</a>
+						</dl>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</article>
+		<!-- COMMENT -->
+		<article id="show_bottom">
+			<div id="show_bottomwrap">
+				<div class="contents_title">
+					<img src="images/index/comment/comment_title.png" alt="Comment"/>
+				</div>
+				<div id="show_comment">
+					<ul>
+						<li class="comment_list">
+							<div class="commentwrap">
+								<div class="main_profileimg"><img src="images/index/comment/profile_img.jpg" alt="프로필사진"/></div>
+								<div class="main_commentbox_img"></div>
+								<div class="main_commentbox">
+									<p class="main_comment"><a href="#">‘19금영화판’. 즉 에로 영화판을 소재로한 정말 한없이 가볍고 싼맛나는 그런 저렴한 영화 인줄 알았는데, 왠걸. 이렇게나 나름 진지하고 뭉클한 감동까지 선사해줄줄은 전혀 몰랐네요. 그래서 너무나 기쁜 마음 으로 기대이상, 의외의 재미를 가져다준 착하고 좋은 영화였습니다. 뭔가...</a>
+									</p>
+									<dl>
+										<dt class="btn_area">
+										<em>곽효창</em><span class="text_slide"> | </span><em>2014.11.11</em><span class="text_slide"> | </span><em>추천</em><span class="recScore">2091</span>
+										</dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li class="comment_list">
+							<div class="commentwrap">
+								<div class="main_profileimg"><img src="images/index/comment/profile_img.jpg" alt="프로필사진"/></div>
+								<div class="main_commentbox_img"></div>
+								<div class="main_commentbox">
+									<p class="main_comment"><a href="#">보세요 돈 아깝지 않습니다 시간이 149분이 그렇게 길게 느껴지지 않습니다 중간중간에 좀 루스하다고 느낄 분이 계실지도 모르겠네요. 전체적으로는 전혀 지루하지 않습니다. 이건 아마 대체로 다들 동의하실 듯. 영화관에서 할 때 보세요.</a>
+									</p>
+									<dl>
+										<dt class="btn_area">
+										<em>나를 찾아줘</em><span class="text_slide"> | </span><em>김수영</em><span class="text_slide"> | </span><em>2014.11.10</em><span class="text_slide"> | </span><em>추천</em><span class="recScore">1932</span>
+										</dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+						<li class="comment_list_last">
+							<div class="commentwrap">
+								<div class="main_profileimg"><img src="images/index/comment/profile_img.jpg" alt="프로필사진"/></div>
+								<div class="main_commentbox_img"></div>
+								<div class="main_commentbox">
+									<p class="main_comment"><a href="#">전율과 환희의 169분이였다. 그 어떤 영화도 시도한 적 없는 명석함과 감동이 담겨 있었다. 이 영화를 만들어낸 놀란의 야심과 능력이 존경스럽다.</a>
+									</p>
+									<dl>
+										<dt class="btn_area">
+										<em>인터스텔라</em><span class="text_slide"> | </span><em>안재훈</em><span class="text_slide"> | </span><em>2014.11.08</em><span class="text_slide"> | </span><em>추천</em><span class="recScore">1607</span>
+										</dt>
+									</dl>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- BEST RANKING -->
+				<div id="show_ranking">
+					<div id="rankingwrap">
+						<dl>
+							<dt id="rank_title"><a href="#">최근 올라온 글</a></dt>
+							<dd class="rank_list">
+								<div class="levelArea"><img src="images/member/level/99.gif" alt="레벨" title="레벨"/></div>
+								<span class="userIdarea"><strong>anjh1231</strong>(nick)</span>						
+							</dd>
+							<dd class="rank_list">
+								<div class="levelArea"><img src="images/member/level/89.gif" alt="레벨" title="레벨"/></div>
+								<span class="userIdarea"><strong>anjh1231</strong>(nick)</span>						
+							</dd>
+							<dd class="rank_list">
+								<div class="levelArea"><img src="images/member/level/71.gif" alt="레벨" title="레벨"/></div>
+								<span class="userIdarea"><strong>anjh1231</strong>(nick)</span>						
+							</dd>
+							<dd class="rank_list">
+								<div class="levelArea"><img src="images/member/level/62.gif" alt="레벨" title="레벨"/></div>
+								<span class="userIdarea"><strong>anjh1231</strong>(nick)</span>						
+							</dd>
+							<dd class="rank_list">
+								<div class="levelArea"><img src="images/member/level/55.gif" alt="레벨" title="레벨"/></div>
+								<span class="userIdarea"><strong>anjh1231</strong>(nick)</span>						
+							</dd>
+							<dd class="rank_list">
+								<div class="levelArea"><img src="images/member/level/43.gif" alt="레벨" title="레벨"/></div>
+								<span class="userIdarea"><strong>anjh1231</strong>(nick)</span>					
+							</dd>
+							<dd class="rank_list">
+								<div class="levelArea"><img src="images/member/level/32.gif" alt="레벨" title="레벨"/></div>
+								<span class="userIdarea"><strong>anjh1231</strong>(nick)</span>						
+							</dd>
+							<dd class="rank_list">
+								<div class="levelArea"><img src="images/member/level/25.gif" alt="레벨" title="레벨"/></div>
+								<span class="userIdarea"><strong>anjh1231</strong>(nick)</span>						
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<div id="flash_wrap">
+					<embed src="images/flash/main_flash.swf" width="298" height="160" title="플래시"/>
+				</div>
+			</div>
+		</article>
+	</section>
+	<div id="footerwrap">
+		<footer>
+			<div id="footer_con">
+				<div id="footer_logo">
+					<img src="images/common/footer/footer_logo.png"/>
+				</div>
+				<div id="footer_info">
+					<div id="footer_menu">
+						<a href="#">회사소개</a><span class="footer_line">|</span>
+						<a href="#">제휴문의</a><span class="footer_line">|</span>
+						<a href="#">이용약관</a><span class="footer_line">|</span>
+						<a href="#">개인정보 취급방침</a><span class="footer_line">|</span>
+						<a href="#">고객센터</a>
+					</div>
+					<div id="footer_copy">
+						경기도 성남시 분당구 탄천로 215 탄천종합운동장 (야탑동 486 탄천종합운동장 주경기장 내)<br/>
+						대표자명 오화연 | 개인정보관리책임자 제휴&솔루션 본부장 이용훈 | 사업자등록번호 123-45-67890 | 통신판매업신고번호 제 123호<br/>
+						Copyright 2014 by MOVIE DAY. All rights reserved
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

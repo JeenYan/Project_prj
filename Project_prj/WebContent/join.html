@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>최신 영화 정보</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/common/favicon/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<style type="text/css">
+
+#contents {
+	background-color: #f3f3f3;
+}
+#content_area {
+	position:relative;
+	width: 1008px;
+	margin: 0 auto;
+	padding: 60px 0;
+}
+
+.location {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	font-size:  15px;
+}
+.location_home {
+	background: url("images/common/contents/location_bg01.png") no-repeat 0 3px !important;
+}
+.location dd {
+	float: left;
+	padding-left: 16px;
+	background: url("images/common/contents/location_bg02.png") no-repeat 7px center;
+}
+.skip {
+	position: absolute;
+	top: -5000px;
+	text-indent: -5000px;
+	font-size: 0;
+	line-height: 0;
+	width: 0;
+	height: 0;
+}
+#page_title {
+	width: 1008px;
+	height: 60px;
+}
+.con_wrap {
+	display: block;
+	width: 1008px;
+	height: 1347px;
+	background-color: #fff;
+}
+.con_wrap h2 {
+	width: 888px;
+	height: 60px;
+	padding: 0 60px;
+	text-indent: -9999em;
+	margin: 0;
+}
+.step {
+	position: relative;
+	top: 13px;
+	float: right;
+	width: 282px;
+	height: 31px;
+	display: block;
+	background: #fff url("images/join/step_bg.gif") no-repeat;
+}
+.step1 {
+	background-position: 0 0;
+}
+.step2 {
+	background-position: 0 -31px ;
+}
+.join_rull {
+	width: 888px;
+	height: 528px;
+	padding: 0 60px;
+}
+.join_rull h3 {
+	width: 888px;
+	height: 30px;
+	text-indent: -9999em;
+	background: #fff url("images/join/joinrull_title.gif") no-repeat;
+}
+
+#title2 {
+	background-position: 0 -30px;
+}
+.rullBox {
+	width: 854px; 
+	height: 406px; 
+	border: 1px solid #ccc; 
+	overflow: scroll; 
+	overflow-x: hidden;
+	padding: 16px;
+	color: #666;
+}
+.rull_check {
+	height: 15px;
+	padding-top: 12px;
+	float: right;
+	font-family: Nanum Gothic;
+	font-size: 13px;
+}
+.rull_check_all {
+	width: 888px;
+	margin: 0 auto;
+	padding: 12px 0;
+	text-align: right;
+	font-family: Nanum Gothic;
+	font-size: 13px;
+	border-top: 1px solid #ccc;
+}
+#joinFrm_1 {
+	width: 888px;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	padding: 40px 0;
+}
+#btn_area {
+	width: 420px;
+	height: 70px;
+	padding: 10px 234px;
+	margin: 0 auto;
+}
+.btn {
+	display: block;
+	width: 190px;
+	height: 50px;
+	float: left;
+	margin: 10px;
+	text-indent: -9999em;
+	background: #fff url("images/join/join_btn.png") no-repeat;
+}
+#back_btn {
+	background-position: 0 -65px;
+}
+</style>
+<script type="text/javascript">
+function popup(){
+	window.open("login.html","pop","width=400, height=310, scrollbars=no, top=200, left=500");
+}//popup
+
+function agreeAll(){
+	var ck_agree=document.getElementsByName("ck_agree");
+
+	if(ck_agree[2].checked==true){
+		ck_agree[0].checked=true;
+		ck_agree[1].checked=true;
+	}else if(ck_agree[2].checked==false){
+		ck_agree[0].checked=false;
+		ck_agree[1].checked=false;
+	}
+}
+function ckSubmit(){
+	var ck_agree=document.getElementsByName("ck_agree");
+	var obj=document.joinFrm_1;
+	var flag=false;
+
+	if(ck_agree[0].checked==false){
+		alert("이용약관을 체크해 주세요.");
+		ck_agree[0].focus();
+	}else if(ck_agree[1].checked==false){
+		alert("이용약관을 체크해 주세요.");
+		ck_agree[1].focus();
+	}else if(obj.name.value==""){
+		alert("이름을 입력하세요.");
+		obj.name.focus();
+		return;
+	}else if(obj.email_1.value==""){
+		alert("이메일을 입력하세요.");
+		obj.email_1.focus();
+		return;
+	}else if(ck_agree[0].checked==true && ck_agree[0].checked==true){
+		obj.submit();
+	}
+	
+}
+</script>
+</head>
+<body>
+	<header>
+		<div id="top_wrap">
+		<div id="top_nav">
+			<nav>
+				<ul id="nav_list">
+					<li><a href="javascript:popup()">로그인</a></li>
+					<li><a href="join.html">회원가입</a></li>
+					<li><a href="">Mypage</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div id="top_menu">
+			<div id="logo">
+				<a href="index.html"><img src="images/common/header/logo.png"/></a>
+			</div>
+			<div id="gnv">
+				<ul>
+					<li id="gnv_newmovie"><a href="sub_movieinfo.html" title="최신 영화 정보">최신 영화 정보</a></li>
+					<li id="gnv_movieinfo"><a href="#" title="영화관 정보">영화관 정보</a></li>
+					<li id="gnv_community"><a href="#" title="영화 커뮤니티">영화 커뮤니티</a></li>
+					<li id="gnv_shop"><a href="#" title="SHOP">SHOP</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</header>
+	<!-- contents -->
+	<section id="contents">
+		<div id="content_area">
+			<dl class="location">
+				<dt class="skip">현재위치</dt>
+				<dd class="location_home"><a href="index.html">HOME</a></dd>
+				<dd><strong>회원가입</strong></dd>
+			</dl>
+			<div id="page_title">
+				<img src="images/join/join_page_title001.gif" title="회원가입1" alt="회원가입1"/>
+			</div>
+			<div class="con_wrap">
+				<h2>
+					약관동의
+					<span class="step step1"></span>
+				</h2>
+				<div class="join_rull">
+					<h3 id="title1">이용약관</h3>
+					<div class="rullBox"> 
+						<p> 제1조(목적)</p>
+						<p>
+						이 약관은 회사 (주)영화보기좋은날이 운영하는 사이버 몰(이하 "몰"이라 한다)에서 제공하는 인터넷 관련 서비스(이하 "서비스"라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리·의무 및 책임사항을 규정함을 목적으로 합니다. 
+						「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다」 
+						</p>
+						 
+						<p> 제2조(정의)</p>
+						<p> 
+						①"몰" 이란 (주)영화보기좋은날이 재화 또는 용역(이하 "재화등"이라 함)을 이용자에게 제공하기 위하여 컴퓨터등 정보통신설비를 이용하여 재화등을 거래할 수 있도록 설정한 가상의 영업장을 말하며, 아울러 사이버몰을 운영하는 사업자의 의미로도 사용합니다. 
+						</p>
+						<p> 
+						②"이용자"란 "몰"에 접속하여 이 약관에 따라 "몰"이 제공하는 서비스를 받는 회원 및 비회원을 말합니다. 
+						</p>
+						<p> 
+						③ '회원'이라 함은 "몰"에 개인정보를 제공하여 회원등록을 한 자로서, "몰"의 정보를 지속적으로 제공받으며, "몰"이 제공하는 서비스를 계속적으로 이용할 수 있는 자를 말합니다. 
+						</p>
+						<p> 
+						④ '비회원'이라 함은 회원에 가입하지 않고 "몰"이 제공하는 서비스를 이용하는 자를 말합니다. 
+						</p>
+						 
+						<p> 제3조 (약관등의 명시와 설명 및 개정)</p> 
+						<p> 
+						① "몰"은 이 약관의 내용과 상호 및 대표자 성명, 영업소 소재지 주소(소비자의 불만을 처리할 수 있는 곳의 주소를 포함), 전화번호·모사전송번호·전자우편주소, 사업자등록번호, 통신판매업신고번호, 개인정보관리책임자등을 이용자가 쉽게 알 수 있도록 사이버몰의 초기 서비스화면(전면)에 게시합니다. 다만, 약관의 내용은 이용자가 연결화면을 통하여 볼 수 있도록 할 수 있습니다. 
+						</p>
+						<p> 
+						② "몰은 이용자가 약관에 동의하기에 앞서 약관에 정하여져 있는 내용 중 청약철회·배송책임·환불조건 등과 같은 중요한 내용을 이용자가 이해할 수 있도록 별도의 연결화면 또는 팝업화면 등을 제공하여 이용자의 확인을 구하여야 합니다. 
+						</p>
+						<p> 
+						③ "몰"은 전자상거래등에서의소비자보호에관한법률, 약관의규제에관한법률, 전자거래기본법, 전자서명법, 정보통신망이용촉진등에관한법률, 방문판매등에관한법률, 소비자보호법 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다. 
+						</p>
+						<p> 
+						④ "몰"이 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 몰의 초기화면에 그 적용일자 7일이전부터 적용일자 전일까지 공지합니다. 다만, 이용자에게 불리하게 약관내용을 변경하는 경우에는 최소한 30일 이상의 사전 유예기간을 두고 공지합니다. 이 경우 "몰"은 개정전 내용과 개정후 내용을 명확하게 비교하여 이용자가 알기 쉽도록 표시합니다. 
+						<p> 
+						⑤ "몰"이 약관을 개정할 경우에는 그 개정약관은 그 적용일자 이후에 체결되는 계약에만 적용되고 그 이전에 이미 체결된 계약에 대해서는 개정전의 약관조항이 그대로 적용됩니다. 다만 이미 계약을 체결한 이용자가 개정약관 조항의 적용을 받기를 원하는 뜻을 제3항에 의한 개정약관의 공지기간내에 "몰"에 송신하여 "몰"의 동의를 받은 경우에는 개정약관 조항이 적용됩니다. 
+						</p>
+						<p> 
+						⑥ 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 전자상거래등에서의소비자보호에관한법률, 약관의규제등에관한법률, 공정거래위원회가 정하는 전자상거래등에서의소비자보호지침 및 관계법령 또는 상관례에 따릅니다. 
+						</p>
+					</div>
+					<div class="rull_check">
+						<input type="checkbox" id="ck_agree" name="ck_agree" style="width:14px; height: 14px;"/>
+						<label for="ck_agree" style="cursor:pointer;"> 위의 ‘이용약관’을 읽고 동의 합니다. (필수 동의)</label>
+					</div>
+				</div>
+				<div class="join_rull">
+					<h3 id="title2">개인정보수집 및 이용안내</h3>
+					<div class="rullBox"> 
+					<p>
+					영화보기좋은날(주)이 개인정보를 수집하는 목적은 보다 다양하고 원활한 고객서비스를 제공하기 위함입니다. 영화보기좋은날(주)은 최초 회원가입 시 개인정보의 수집항목 및 이용목적, 개인정보의 수집방법, 개인정보의 이용 및 보관기간을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다. 
+					</p>
+					<p>
+					1. 개인정보의 수집항목 및 이용목적<br/>
+					&lt;필수입력사항&gt;<br/>
+					성명, 아이디, 비밀번호, 휴대폰번호, 이메일 생년월일, SMS/이메일 수신여부, 본인확인기관을 통해 받는 결과값(CI) 등
+					</p>
+					<p>
+					&lt;선택입력항목&gt;<br/>
+					거주지 주소, 유선 전화번호, 선호극장, 페이스북 계정
+					</p>
+					<p>
+					&lt;서비스 이용 또는 사업처리 과정에서 생성 수집되는 각종 거래 및 개인 성향 정보&gt;<br/>
+					서비스 이용기록, 접속로그, 쿠키, 접속IP정보, 결제기록 등
+					</p>
+					<p>
+					&lt;수집ᆞ이용목적&gt;<br/>
+					- 회원 서비스 이용에 따른 본인 식별 및 실명 여부, 중복 가입 여부 확인<br/>
+					- 새로운 서비스 및 신상품이나 이벤트 정보 등의 안내<br/>
+					- 마케팅, 홍보 등을 위한 고객분석, 편의성 제공, 공지사항 전달/불만 처리 등을 위한 원활한 의사소통 경로의 확보<br/>
+					- 개인정보 침해 사고에 대한 대비, 분쟁 조정을 위한 기록보존<br/>
+					- 상품 구매에 대한 결제, 신규 서비스 개발 및 맞춤 서비스 제공, 통계학적 특성에 따른 서비스 제공
+					</p>
+					<p>
+					2. 개인정보의 수집방법<br/>
+					(1) 회사는 고객이 가입신청서 등 각종 서면을 작성하는 경우, 회사의 홈페이지에서 회원가입을 하는 경우, 특정
+					서비스 화면상으로 동의한 경우, SNS(페이스북, 트위터 등), 전화(SMS, MMS를 포함), 우편, 이메일, 팩스, 기타 
+					매체를 통하여 동의한 경우에 개인정보를 수집합니다.
+					</p>
+					<p>
+					(2) 그 밖에 홈페이지, 이동전화, 인터넷상의 생성정보 수집 툴 등을 통하여 개인정보를 수집할 수 있습니다.
+					</p>
+					<p>
+					3. 개인정보의 이용·보관 기간<br/>
+					영화보기좋은날(주)은 개인정보의 수집 및 제공 받은 목적이 달성되면 개인정보를 파기함을 원칙으로 합니다. 다만, 다음 각 호의 경우 일정기간 동안 예외적으로 수집한 회원정보의 전부 또는 일부를 보관할 수 있습니다. 무분별한 회원탈퇴와 재가입으로 인한 피해 최소화, 회원탈퇴 후 변심에 의한 민원처리 등을 처리하기 위하여<br/>
+					회원탈퇴 후 30일간 회원정보 보유<br/>
+					보유 기간을 미리 고지하고 별도의 동의를 받은 경우 해당 보유기간까지 보유
+					</p>
+					<p>
+					‘상법’ 및 ‘전자상거래 등에서의 소비자보호에 관한 법률’ 등 관련 법령에 따라 일정기간 보유할 필요가 있는 경우 관련 법령이 정한 기간에 따라 보유 
+					</p>
+					<p>
+					- 계약 또는 청약철회 등에 관한 기록: 5년<br/>
+					- 대금결제 및 재화 등의 공급에 관한 기록: 5년<br/>
+					- 소비자의 불만 또는 분쟁 처리에 관한 기록: 3년<br/>
+					- 게시판 이용자의 본인확인에 관한 기록: 6개월<br/>
+					</p>
+					</div>
+					<div class="rull_check">
+						<input type="checkbox" id="ck_pri" name="ck_agree" style="width:14px; height: 14px;"/>
+						<label for="ck_pri" style="cursor:pointer;"> 위의 ‘이용약관’을 읽고 동의 합니다. (필수 동의)</label>
+					</div>
+				</div>
+				<div class="rull_check_all">
+					<input type="checkbox" id="ck_all" name="ck_agree" onclick="agreeAll()" style="width:14px; height: 14px;"/>
+						<label for="ck_all" style="cursor:pointer;"> 위의 약관을 모두 읽고 동의 합니다.</label>
+				</div>
+				<div id="joinFrm_1" >
+					<form name="joinFrm_1" method="post">
+						<label>이름</label>
+						<input type="text" name="name" />
+						<label>이메일</label>
+						<input type="text" name="email_1" />@
+						<select>
+							<option>직접입력</option>
+							<option>naver</option>
+							<option>hanmail</option>
+							<option>gamil</option>
+							<option>nate</option>
+						</select>
+						<input type="text" name="email_2"/>
+						<div id="btn_area">
+							<a href="javascript:ckSubmit()" class="btn" id="agree_btn"><img src="images/join/agree_btn.gif" alt="가입하기"/>가입하기</a>
+							<a href="index.html" class="btn" id="back_btn"><img src="images/join/no_btn.gif" alt="돌아가기"/>돌아가기</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div id="footerwrap">
+		<footer>
+			<div id="footer_con">
+				<div id="footer_logo">
+					<img src="images/common/footer/footer_logo.png"/>
+				</div>
+				<div id="footer_info">
+					<div id="footer_menu">
+						<a href="#">회사소개</a><span class="footer_line">|</span>
+						<a href="#">제휴문의</a><span class="footer_line">|</span>
+						<a href="#">이용약관</a><span class="footer_line">|</span>
+						<a href="#">개인정보 취급방침</a><span class="footer_line">|</span>
+						<a href="#">고객센터</a>
+					</div>
+					<div id="footer_copy">
+						경기도 성남시 분당구 탄천로 215 탄천종합운동장 (야탑동 486 탄천종합운동장 주경기장 내)<br/>
+						대표자명 오화연 | 개인정보관리책임자 제휴&솔루션 본부장 이용훈 | 사업자등록번호 123-45-67890 | 통신판매업신고번호 제 123호<br/>
+						Copyright 2014 by MOVIE DAY. All rights reserved
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

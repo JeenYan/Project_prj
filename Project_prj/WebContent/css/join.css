@@ -1,0 +1,198 @@
+@CHARSET "EUC-KR";
+
+#contents {
+	background-color: #f3f3f3;
+}
+#content_area {
+	position:relative;
+	width: 1008px;
+	margin: 0 auto;
+	padding: 60px 0;
+}
+
+.location {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	font-size:  15px;
+}
+.location_home {
+	background: url("../images/common/contents/location_bg01.png") no-repeat 0 3px !important;
+}
+.location dd {
+	float: left;
+	padding-left: 16px;
+	background: url("../images/common/contents/location_bg02.png") no-repeat 7px center;
+}
+.skip {
+	position: absolute;
+	top: -5000px;
+	text-indent: -5000px;
+	font-size: 0;
+	line-height: 0;
+	width: 0;
+	height: 0;
+}
+#page_title {
+	width: 1008px;
+	height: 60px;
+}
+.con_wrap {
+	display: block;
+	width: 1008px;
+	background-color: #fff;
+}
+.con_wrap h2 {
+	width: 888px;
+	height: 60px;
+	padding: 0 60px;
+	text-indent: -9999em;
+	margin: 0;
+}
+.step {
+	position: relative;
+	top: 13px;
+	float: right;
+	width: 282px;
+	height: 31px;
+	display: block;
+	background: #fff url("../images/join/step_bg.gif") no-repeat;
+}
+.step1 {
+	background-position: 0 0;
+}
+.step2 {
+	background-position: 0 -31px ;
+}
+.step3 {
+	background-position: 0 -62px ;
+}
+.join_rull {
+	width: 888px;
+	height: 528px;
+	padding: 0 60px;
+}
+.join_rull h3 {
+	width: 888px;
+	height: 30px;
+	text-indent: -9999em;
+	background: #fff url("../images/join/joinrull_title.gif") no-repeat;
+}
+
+#title2 {
+	background-position: 0 -30px;
+}
+.rullBox {
+	width: 854px; 
+	height: 406px; 
+	border: 1px solid #ccc; 
+	overflow: scroll; 
+	overflow-x: hidden;
+	padding: 16px;
+	color: #666;
+}
+.rull_check {
+	height: 15px;
+	padding-top: 12px;
+	float: right;
+	font-family: Nanum Gothic;
+	font-size: 13px;
+}
+.rull_check_all {
+	width: 888px;
+	margin: 0 auto;
+	padding: 12px 0;
+	text-align: right;
+	font-family: Nanum Gothic;
+	font-size: 13px;
+	border-top: 1px solid #ccc;
+}
+#joinFrm_1 {
+	width: 888px;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	padding-top: 40px;
+}
+#btn_area {
+	width: 420px;
+	height: 70px;
+	padding: 10px 234px 60px;
+	margin: 0 auto;
+}
+.btn {
+	display: block;
+	width: 190px;
+	height: 50px;
+	float: left;
+	margin: 10px;
+	text-indent: -9999em;
+	background: #fff url("../images/join/join_btn.png") no-repeat;
+}
+#back_btn {
+	background-position: 0 -65px;
+}
+#agree_btn2 {
+	background-position: 0 -130px;
+}
+#back_btn2 {
+	background-position: 0 -195px;
+}
+#back_btn3 {
+	background-position: 0 -260px;
+}
+.option {
+	height: 40px;
+	padding: 8px 10px;
+}
+
+.join_title {
+	width: 888px;
+	height: 30px;
+	padding: 0 60px;
+}
+.conBox {
+	width: 888px;
+	height: 385px;
+	border-top: 2px solid #f72d5d;
+	border-bottom: 1px solid #ccc;
+	padding: 5px 0;
+	margin: 0 auto;
+}
+.inp_list {
+	width: 100%;
+	line-height: 35px;
+	overflow: hidden;
+}
+.list_title {
+	width: 151px;
+	padding-left: 19px;
+	float: left;
+	text-indent: -9999em;
+}
+.list_title label{
+	display: block;
+	background: url("../images/join/input_title.png") no-repeat;
+}
+.icon {
+	background: url("../images/join/chk_imp.png") no-repeat;
+}
+.inInfo {
+	float: right;
+	width: 718px;
+}
+.inputJoin {
+	width:178px;
+	height: 24px;
+	border: 1px solid #ccc;
+	padding: 0;
+	padding-left: 10px;
+	background-color: #f8f8f8;
+}
+.chk_btn {
+	width: 93px;
+	height: 26px;
+	border:1px solid #eee;
+	background-color: #f8f8f8;
+	margin-left: 10px;
+}

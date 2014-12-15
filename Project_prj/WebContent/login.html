@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인-영화 보기 좋은날</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/common/favicon/favicon.ico">
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<style type="text/css">
+	body	{
+		overflow: hidden;
+	}
+	#logwrap {
+		width: 400px;
+		height: 310px;
+	}
+	#login_tap {
+		width: 400px;
+		height: 40px;
+		background: url("images/common/login/login_tap.gif") no-repeat;
+	}
+	#close_btn {
+		float:right;
+		width: 16px;
+		height: 16px;
+		padding: 12px 12px;
+	}
+	#content {
+		width: 400px;
+		height: 210px;
+	}
+	#form_area{
+		width: 280px;
+		height: 74px;
+		margin: 0 auto;
+		position: relative;
+		top: 40px;
+	}
+	#login_form {
+		width: 280px;
+		height: 74px;
+	}
+	#input_id_pwd {
+		float: left;
+		width: 190px;
+		height: 74px;
+	}
+	#pwd_area {
+		margin-top: 10px;
+	}
+	#login_btn {
+		float: left;
+		width: 64px;
+		height: 74px;
+		margin-left: 26px;
+	}
+	.btn {
+		width: 64px;
+		height: 74px;
+		background: url("images/common/login/login_btn.png") no-repeat;
+		border: 0;
+		text-indent: -999em;
+		cursor: pointer;
+	}
+	#find_info {
+		text-align: center;
+		margin-top: 40px;
+	}
+	#find_info a {
+		text-decoration: none;
+	}
+
+</style>
+<script type="text/javascript">
+function joinPage(){
+	opener.location.href='join.html';
+	self.close();
+}
+</script>
+</head>
+<body>
+	<div id="logwrap">
+		<div id="login_logo"><img src="images/common/login/login_logo.gif" alt="로그인페이지"></div>
+		<div id="login_tap">
+			<div id="close_btn"><a href="javascript:self.close()" ><img src="images/common/login/close_btn.png" alt="닫기"></a></div>
+		</div>
+		<div id="content">
+			<div id="form_area">
+				<form action="" method="post" id="login_form">
+					<div id="input_id_pwd">
+						<div class="input" id="id_area">
+							<input type="text" class="inputBox" name="id" placeholder="아이디" tabindex="1" autofocus="autofocus"/>
+						</div>
+						<div class="input" id="pwd_area">
+							<input type="password" class="inputBox" name="pwd" placeholder="비밀번호" tabindex="2"/>
+						</div>
+					</div>
+					<div id="login_btn">
+						<input type="submit" class="btn" title="로그인" value="로그인" tabindex="3"/>
+					</div>
+				</form>
+				<div id="find_info">
+					<span id="join"><a href="javascript:joinPage()">회원가입</a></span><span class="text_slide">|</span><span id="find_id_pwd"><a href="#">아이디&비밀번호 찾기</a></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
